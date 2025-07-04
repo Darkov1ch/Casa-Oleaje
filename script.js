@@ -13,3 +13,25 @@ window.addEventListener("scroll", () => {
   const scrollProgress = (window.scrollY / scrollTotal) * 100;
   progressBar.style.width = `${scrollProgress}%`;
 });
+
+// Mobile menu logic
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+// Відкрити меню
+menuBtn?.addEventListener('click', () => {
+  mobileMenu.classList.remove('hidden');
+});
+
+// Закрити меню
+closeMenu?.addEventListener('click', () => {
+  mobileMenu.classList.add('hidden');
+});
+
+// Закривати меню при натисканні на будь-який лінк у меню
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+});
