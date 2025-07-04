@@ -15,23 +15,23 @@ window.addEventListener("scroll", () => {
 });
 
 // Mobile menu logic
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMenu = document.getElementById('closeMenu');
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
 
 // Відкрити меню
-menuBtn?.addEventListener('click', () => {
-  mobileMenu.classList.remove('hidden');
+menuBtn?.addEventListener("click", () => {
+  mobileMenu.classList.add("show");
 });
 
 // Закрити меню
-closeMenu?.addEventListener('click', () => {
-  mobileMenu.classList.add('hidden');
+closeMenu?.addEventListener("click", () => {
+  mobileMenu.classList.remove("show");
 });
 
 // Закривати меню при натисканні на будь-який лінк у меню
-document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
+document.querySelectorAll(".mobile-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("show");
   });
 });
